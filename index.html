@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style_grind.css">
+    <title>Profiles</title>
+    <style>
+        .profiles-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background: linear-gradient(180deg,rgba(56, 101, 246, 1)0%,rgba(255, 255, 255, 1)100%, transparent);
+            border: 1rem solid white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 10px 10px 10px lightgray;
+        }
+        .card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .popover {
+            position: fixed;
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .popover img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .popover input {
+            display: block;
+            margin: 10px 0;
+            padding: 5px;
+            width: calc(100% - 20px);
+        }
+        .popover button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profiles-container"></div>
+    <div class="popover" id="popover">
+        <img id="popover-avatar" src="" alt="avatar">
+        <button onclick="changeAvatar()">Change Avatar</button>
+        <button onclick="deleteProfile()">Delete</button>
+        <input type="text" id="popover-name" placeholder="Name">
+        <input type="number" id="popover-age" placeholder="Age">
+        <input type="email" id="popover-email" placeholder="Email">
+        <button onclick="saveChanges()">Save</button><br>
+        <button onclick="closePopover()">Close</button><br>
+    </div>
+</body>
+</html>
